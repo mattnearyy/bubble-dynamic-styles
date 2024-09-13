@@ -1,0 +1,55 @@
+<script>
+// Custom JS function to set icon dynamically across different libraries
+function setIconDynamic(context, iconType, fillType = 'default') {
+    const element = context.self;
+    const svgElement = element.querySelector('svg');
+    const useElement = svgElement.querySelector('use');
+
+    if (!svgElement || !useElement) {
+        console.error('SVG or use element not found within the given element');
+        return;
+    }
+
+    const iconSet = svgElement.getAttribute('data-icon-set');
+    let newHref = '';
+
+    switch (iconSet) {
+        case 'material':
+            newHref = `/static/icon_libraries/material-icons-4.0.0-${fillType === 'default' ? 'outlined' : fillType}.svg#${iconType}`;
+            break;
+        case 'phosphor':
+            newHref = `/static/icon_libraries/phosphor-2.1.0-${fillType === 'default' ? 'regular' : fillType}.svg#${iconType}`;
+            break;
+        case 'ionic':
+            newHref = `/static/icon_libraries/ionicons-7.1.0-${fillType === 'default' ? 'outline' : fillType}.svg#${iconType}`;
+            break;
+        case 'feather':
+            // Feather doesn't support fill types, so we ignore the fillType argument
+            newHref = `/static/icon_libraries/feather-4.29.0.svg#${iconType}`;
+            break;
+        case 'bootstrap':
+            // Bootstrap doesn't have different fill types in separate files
+            newHref = `/static/icon_libraries/bootstrap-icons-1.11.3.svg#${iconType}`;
+            break;
+        case 'fontawesome-6':
+            newHref = `/static/icon_libraries/fontawesome-6.5.2-${fillType === 'default' ? 'regular' : fillType}.svg#${iconType}`;
+            break;
+        case 'fa':
+            // Font Awesome 4 doesn't have different fill types in separate files
+            newHref = `/static/icon_libraries/fontawesome-4.7.0.svg#fa-${iconType}`;
+            break;
+        default:
+            console.error(`Unknown icon set: ${iconSet}`);
+            return;
+    }
+
+    useElement.setAttribute('href', newHref);
+    console.log(`Icon updated: ${newHref}`);
+}
+    
+// Usage in Classify ID field:
+// For libraries with fill types:
+// [setIconDynamic(this, 'star', 'filled');]
+// For libraries without fill types or using default:
+// [setIconDynamic(this, 'star');]
+</script>
