@@ -8,7 +8,7 @@ _Click the thumbnail to open_
 ## 1. Add a script to your app
 
 - Go to SEO/Meta tags settings
-- Paste the provided script in the header section
+- Paste the [provided script](https://github.com/mattnearyy/bubble-dynamic-styles/blob/main/script.html) in the header section
 - **Note**: For free plans, add the script in an HTML element instead
 
 ## 2. Install the "Classify" plugin
