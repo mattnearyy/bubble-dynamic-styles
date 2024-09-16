@@ -1,5 +1,10 @@
 # How to Use Dynamic Icons in Bubble
 
+## Video tutorial
+_Click the thumbnail to open_
+
+[![Video Title](https://img.youtube.com/vi/cfzDyOTHpBo/0.jpg)](https://www.youtube.com/watch?v=cfzDyOTHpBo)
+
 ## 1. Add a script to your app
 
 - Go to SEO/Meta tags settings
