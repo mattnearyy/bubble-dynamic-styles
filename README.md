@@ -22,9 +22,13 @@
   ```
   [setDynamicIcon('phosphor', '{icon label goes here}', '{icon fill type goes here}')]
   ```
+- If the icon library does not have a fill option just omit this last argument, i.e. use:  ```[setIconDynamic(this, '{icon label}');]```
 - Use lowercase for your icon label ('house' or 'users' etc) and fill types ('regular' or 'filled' etc). Use the value names that the library uses.
 
 ## 7. For conditional styling
 
 - Duplicate the Classify syntax
 - Modify parameters based on your conditions (e.g., change 'regular' to 'fill' when active)
+
+## Other notes
+- For Font Awesome 4, omit the 'fa' before the icon label.
